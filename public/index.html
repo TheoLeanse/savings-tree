@@ -16,6 +16,15 @@
     <span ng-hide="!savingsCtrl.hasTarget()">
         <div class="target-amount">Current Target Amount: {{savingsCtrl.target}}</div>
         <div class="time-span">Current Time Span: {{savingsCtrl.timeframe}}</div>
+
+        <div class="deposit">
+            <form>
+                <input type="text" class="deposit-field" ng-model="deposit"></div>
+                <button class="add-deposit" ng-click="savingsCtrl.addDeposit(deposit)">Add deposit</button>
+            </form>
+
+            <div class="deposit-amount">Current Savings: £{{ savingsCtrl.deposit.toFixed(2) }}</div>
+        </div>
     </span>
 </body>
 </html>
