@@ -2,6 +2,7 @@
 <html ng-app="SavingsTree">
 <head>
     <title>Savings tree</title>
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
@@ -27,6 +28,10 @@
             <div class="deposit-amount">Current Savings: £{{ savingsCtrl.deposit.toFixed(2) }}</div>
         </div>
         <div class="time-left">Minutes left until target date: {{savingsCtrl.timeLeft()}}</div>
+        <div class="status-bar-container">
+          <div class="status-bar" ng-style="{ 'width': savingsCtrl.percentageTime, 'background-color': savingsCtrl.statusColor }"></div>
+      </div>
+          {{ savingsCtrl.percentageTime }}
     </span>
 </body>
 </html>
