@@ -7,4 +7,8 @@ app.controller("SavingsTreeController", function() {
     self.addTarget = function(target) {
         self.target = target;
     };
+
+    self.hasTarget = function() {
+        return self.target > 0;
+    };
 });
