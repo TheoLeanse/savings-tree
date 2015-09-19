@@ -1,3 +1,7 @@
+body {
+  font-family: helvetica;
+}
+
 .status-bar {
   color: red;
   border-color: red;
