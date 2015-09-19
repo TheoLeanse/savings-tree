@@ -11,7 +11,7 @@
     <form ng-hide="savingsCtrl.hasTarget()">
         Target Amount: <input type="text" class="target-field" ng-model="target">
         Save this within how many seconds? <input type="text" class="time-field" ng-model="timeframe">
-        <button name="set" class="add-target" ng-click="savingsCtrl.addTarget(target, timeframe)"></button>
+        <button class="add-target" ng-click="savingsCtrl.addTarget(target, timeframe)">Set targets</button>
     </form>
 
     <span ng-hide="!savingsCtrl.hasTarget()">
