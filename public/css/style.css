@@ -1,0 +1,11 @@
+body {
+  font-family: helvetica;
+  padding: 20px;
+}
+
+.status-bar {
+  color: red;
+  border-color: red;
+  border-width: thick;
+  height: 100px;
+}

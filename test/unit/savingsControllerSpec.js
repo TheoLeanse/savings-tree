@@ -24,4 +24,5 @@ describe("Savings Tree controller", function() {
         ctrl.addDeposit(deposit);
         expect(ctrl.deposit).toEqual(deposit);
     });
+
 });
