@@ -10,8 +10,12 @@
 <body ng-controller="SavingsTreeController as savingsCtrl">
 
     <form ng-hide="savingsCtrl.hasTarget()">
-        Target Amount: <input type="text" class="target-field" ng-model="target">
-        Save this within how many seconds? <input type="text" class="time-field" ng-model="timeframe">
+        <p>
+          Target Amount: <input type="text" class="target-field" ng-model="target">
+        </p>
+        <p>
+          Save this within how many seconds? <input type="text" class="time-field" ng-model="timeframe">
+        </p>
         <button class="add-target" ng-click="savingsCtrl.addTarget(target, timeframe)">Set targets</button>
     </form>
 

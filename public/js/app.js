@@ -39,7 +39,7 @@ app.controller("SavingsTreeController", function($interval) {
     self.elapsedTime = function() {
       self.percentageTime = self.startdate.diff(moment()) / moment().diff(self.enddate) * 100;
       console.log(self.percentageTime);
-      self.showTime = parseInt(self.percentageTime) + "%"
+      self.showTime = parseInt(self.percentageTime) + "%";
     };
 
     self.statusColorCalc = function() {
