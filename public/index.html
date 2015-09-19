@@ -10,7 +10,7 @@
 
     <form ng-hide="savingsCtrl.hasTarget()">
         Target Amount: <input type="text" class="target-field" ng-model="target">
-        Save this within how many minutes? <input type="text" class="time-field" ng-model="timeframe">
+        Save this within how many seconds? <input type="text" class="time-field" ng-model="timeframe">
         <button name="set" class="add-target" ng-click="savingsCtrl.addTarget(target, timeframe)"></button>
     </form>
 
@@ -26,7 +26,7 @@
 
             <div class="deposit-amount">Current Savings: £{{ savingsCtrl.deposit.toFixed(2) }}</div>
         </div>
-        <div class="time-left">Minutes left until target date: {{savingsCtrl.timeLeft()}}</div>
+        <div class="time-left">Seconds left until target date: {{savingsCtrl.calculateTimeLeft()}}</div>
     </span>
 </body>
 </html>
