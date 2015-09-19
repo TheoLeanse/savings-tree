@@ -4,12 +4,13 @@
     <title>Savings tree</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
 </head>
 <body ng-controller="SavingsTreeController as savingsCtrl">
-    
+
     <form ng-hide="savingsCtrl.hasTarget()">
         Target Amount: <input type="text" class="target-field" ng-model="target">
-        Time Amount: <input type="text" class="time-field" ng-model="timeframe">
+        Save this within how many minutes? <input type="text" class="time-field" ng-model="timeframe">
         <button name="set" class="add-target" ng-click="savingsCtrl.addTarget(target, timeframe)"></button>
     </form>
 
@@ -25,6 +26,7 @@
 
             <div class="deposit-amount">Current Savings: £{{ savingsCtrl.deposit.toFixed(2) }}</div>
         </div>
+        <div class="time-left">Minutes left until target date: {{savingsCtrl.timeLeft()}}</div>
     </span>
 </body>
 </html>

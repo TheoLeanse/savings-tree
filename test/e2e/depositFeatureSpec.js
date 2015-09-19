@@ -24,7 +24,7 @@ describe("Adding deposits", function () {
         it("should allow a user to deposit some amount", function () {
             depositField.sendKeys("10");
             addDepositBtn.click();
-            expect(depositAmount.getText()).toEqual("£10.00");
+            expect(depositAmount.getText()).toContain("£10.00");
         });
     });
 });
