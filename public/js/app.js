@@ -9,7 +9,7 @@ app.controller("SavingsTreeController", function($interval) {
     self.enddate = moment();
     self.percentageTime = 50;
     self.statusColor = "grey";
-    self.timeLeft = 1;
+    self.timeLeft = 0;
     self.showTime = parseInt(self.percentageTime) + "%";
 
     self.addTarget = function(target, timeframe) {
@@ -37,8 +37,7 @@ app.controller("SavingsTreeController", function($interval) {
     };
 
     self.elapsedTime = function() {
-      self.percentageTime = self.startdate.diff(moment()) / moment().diff(self.enddate) * 100;
-      console.log(self.percentageTime);
+      self.percentageTime = Math.min(self.startdate.diff(moment()) / self.startdate.diff(self.enddate) * 100, 100);
       self.showTime = parseInt(self.percentageTime) + "%";
     };
 
@@ -48,7 +47,7 @@ app.controller("SavingsTreeController", function($interval) {
       } else { self.statusColor = "green"; }
     };
 
-    $interval(self.calculateTimeLeft, 1000);
-    $interval(self.elapsedTime, 1000);
-    $interval(self.statusColorCalc, 1000);
+    $interval(self.calculateTimeLeft, 100);
+    $interval(self.elapsedTime, 100);
+    $interval(self.statusColorCalc, 100);
 });
